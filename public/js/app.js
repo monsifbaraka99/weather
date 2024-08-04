@@ -14,7 +14,7 @@ console.log("Test")
     message1.textContent = "Laoding data..."
     message2.textContent = ""
 
-    fetch("http://localhost:3000/weather?adress="+ location  ).then((response) => {
+    fetch("/weather?adress="+ location  ).then((response) => {
         return response.json()}).then((res) => {
             if (!res.data) {
                 console.log("Error, Unable to find Location",
@@ -26,7 +26,7 @@ console.log("Test")
         else {
             message1.textContent = `Temperature: ${res.data.temperature}°C, Wind Speed: ${res.data.windspeed} km/h, Precipitation: ${res.data.precipitation} mm, Time: ${res.data.heure}`;
         message2.textContent = `Location: ${res["Location "]}`;
-            
+              
             
         }
         })
